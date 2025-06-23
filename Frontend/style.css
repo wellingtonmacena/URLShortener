@@ -1,0 +1,118 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #232526 0%, #414345 100%);
+    font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
+    color: #f5f6fa;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    background: rgba(34, 40, 49, 0.95);
+    padding: 3rem 2.5rem;
+    border-radius: 18px;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+}
+
+h1 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 1.2rem;
+    letter-spacing: 1px;
+    color: #00adb5;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+input[type="url"],
+input[type="text"] {
+    padding: 0.9rem 1rem;
+    border: none;
+    border-radius: 8px;
+    background: #393e46;
+    color: #f5f6fa;
+    font-size: 1rem;
+    transition: background 0.2s;
+}
+
+input[type="url"]:focus,
+input[type="text"]:focus {
+    background: #222831;
+    outline: 2px solid #00adb5;
+}
+
+button {
+    padding: 0.9rem 1rem;
+    border: none;
+    border-radius: 8px;
+    background: linear-gradient(90deg, #00adb5 0%, #00fff5 100%);
+    color: #232526;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+}
+
+button:hover {
+    background: linear-gradient(90deg, #00fff5 0%, #00adb5 100%);
+    color: #fff;
+}
+
+.result {
+    margin-top: 1.5rem;
+    padding: 1rem;
+    background: #393e46;
+    border-radius: 8px;
+    color: #00fff5;
+    word-break: break-all;
+    font-size: 1.05rem;
+    box-shadow: 0 2px 8px rgba(0, 173, 181, 0.08);
+}
+
+@media (max-width: 500px) {
+    .container {
+        padding: 2rem 1rem;
+        max-width: 95vw;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+}
+
+.loader {
+    margin: 2rem auto;
+    border: 6px solid #393e46;
+    border-top: 6px solid #00adb5;
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}

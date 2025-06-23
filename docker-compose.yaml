@@ -1,0 +1,28 @@
+name: url-shortener
+services:
+  localstack-2:
+    image: localstack/localstack:latest
+    container_name: localstack
+    environment:
+      - SERVICES=dynamodb
+      - AWS_DEFAULT_REGION=us-east-1
+      - DEBUG=1
+      # Defina as credenciais para o LocalStack (essas serão usadas pela sua aplicação também)
+    ports:
+      # Now only required if you need to access LocalStack from the host
+      - "127.0.0.1:4566:4566"
+      # Now only required if you need to access LocalStack from the host
+      - "127.0.0.1:4510-4559:4510-4559"
+    volumes:
+      - "./local/localstack/init/init-dynamodb.sh:/etc/localstack/init/ready.d/init-dynamodb.sh"
+    networks:
+      ls:
+        # Set the container IP address in the 172.28.0.0/24 subnet
+        ipv4_address: 172.28.0.20
+
+networks:
+  ls:
+    ipam:
+      config:
+        # Specify the subnet range for IP address allocation
+        - subnet: 172.28.0.0/24
