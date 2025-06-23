@@ -1,6 +1,9 @@
-r
 
 ## Overview
+
+
+![URLShortener Demo](/local/docs/url-shortener-demo.gif)
+
 
 URLShortener is a web application designed to shorten long URLs into compact, easy-to-share links. It provides a simple interface for users to generate short links and track their usage statistics.
 

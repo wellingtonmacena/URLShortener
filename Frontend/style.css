@@ -7,7 +7,7 @@
 
 body {
     min-height: 100vh;
-    background: linear-gradient(135deg, #232526 0%, #414345 100%);
+    background: linear-gradient(120deg, #232526 0%, #393e46 100%);
     font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
     color: #f5f6fa;
     display: flex;
@@ -17,84 +17,92 @@ body {
 }
 
 .container {
-    background: rgba(34, 40, 49, 0.95);
-    padding: 3rem 2.5rem;
-    border-radius: 18px;
-    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-    max-width: 400px;
+    background: rgba(34, 40, 49, 0.98);
+    padding: 2.5rem 2rem;
+    border-radius: 20px;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.25), 0 1.5px 8px 0 rgba(0, 173, 181, 0.10);
+    max-width: 410px;
     width: 100%;
     text-align: center;
+    border: 1.5px solid #00adb5;
+    backdrop-filter: blur(2px);
 }
 
 h1 {
-    font-size: 2.2rem;
-    font-weight: 700;
-    margin-bottom: 1.2rem;
-    letter-spacing: 1px;
-    color: #00adb5;
+    font-size: 2.3rem;
+    font-weight: 800;
+    margin-bottom: 1.5rem;
+    letter-spacing: 1.5px;
+    color: #00fff5;
+    text-shadow: 0 2px 8px rgba(0, 173, 181, 0.10);
 }
 
 form {
     display: flex;
     flex-direction: column;
-    gap: 1.2rem;
+    gap: 1.1rem;
 }
 
 input[type="url"],
 input[type="text"] {
-    padding: 0.9rem 1rem;
-    border: none;
-    border-radius: 8px;
-    background: #393e46;
+    padding: 1rem 1.1rem;
+    border: 1.5px solid #00adb5;
+    border-radius: 10px;
+    background: #232526;
     color: #f5f6fa;
-    font-size: 1rem;
-    transition: background 0.2s;
+    font-size: 1.07rem;
+    transition: border 0.2s, background 0.2s;
+    box-shadow: 0 1px 4px rgba(0, 173, 181, 0.05);
 }
 
 input[type="url"]:focus,
 input[type="text"]:focus {
-    background: #222831;
-    outline: 2px solid #00adb5;
+    background: #181a1b;
+    border: 1.5px solid #00fff5;
+    outline: none;
 }
 
 button {
-    padding: 0.9rem 1rem;
+    padding: 1rem 1.1rem;
     border: none;
-    border-radius: 8px;
+    border-radius: 10px;
     background: linear-gradient(90deg, #00adb5 0%, #00fff5 100%);
     color: #232526;
-    font-size: 1.1rem;
-    font-weight: 600;
+    font-size: 1.13rem;
+    font-weight: 700;
     cursor: pointer;
-    transition: background 0.2s, color 0.2s;
+    box-shadow: 0 2px 8px rgba(0, 173, 181, 0.10);
+    transition: background 0.2s, color 0.2s, transform 0.1s;
 }
 
-button:hover {
+button:hover, button:focus {
     background: linear-gradient(90deg, #00fff5 0%, #00adb5 100%);
     color: #fff;
+    transform: translateY(-2px) scale(1.03);
 }
 
 .result {
-    margin-top: 1.5rem;
-    padding: 1rem;
-    background: #393e46;
-    border-radius: 8px;
+    margin-top: 1.7rem;
+    padding: 1.1rem;
+    background: #232526;
+    border-radius: 10px;
     color: #00fff5;
     word-break: break-all;
-    font-size: 1.05rem;
-    box-shadow: 0 2px 8px rgba(0, 173, 181, 0.08);
+    font-size: 1.08rem;
+    box-shadow: 0 2px 12px rgba(0, 173, 181, 0.10);
+    border: 1.2px solid #00adb5;
+    letter-spacing: 0.2px;
 }
 
 @media (max-width: 500px) {
     .container {
-        padding: 2rem 1rem;
-        max-width: 95vw;
+        padding: 1.5rem 0.5rem;
+        max-width: 98vw;
     }
 
     h1 {
-        font-size: 1.5rem;
+        font-size: 1.3rem;
     }
-
 }
 
 .loader {
@@ -105,13 +113,13 @@ button:hover {
     width: 48px;
     height: 48px;
     animation: spin 1s linear infinite;
+    box-shadow: 0 2px 8px rgba(0, 173, 181, 0.10);
 }
 
 @keyframes spin {
     0% {
         transform: rotate(0deg);
     }
-
     100% {
         transform: rotate(360deg);
     }

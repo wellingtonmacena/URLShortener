@@ -30,6 +30,8 @@
             <button onclick="shortenUrl()">Shorten</button>
         </div>
         <div class="loader" id="loader"></div>
+        <br>
+        <br>
         <div id="result"></div>
         <div id="error"></div>
     </div>
@@ -51,6 +53,7 @@
                     const shortUrl = backendUrl + '/' + data.key;
                     document.getElementById('result').innerHTML = `
                         Shortened URL: <b>${shortUrl}</b>
+                         <br>
                         <button class="open-btn" onclick="window.open('${shortUrl}', '_blank')">Open</button>
                     `;
                 } else {
