@@ -13,7 +13,7 @@ export class AppService {
   }
 
   async createNewURL(originalUrl: string): Promise<any> {
-    const newUrl = this.generateAlphanumericCode(8);
+    const newUrl = this.generateAlphanumericCode(6);
     const item = {
       key: newUrl,
       originalUrl,
